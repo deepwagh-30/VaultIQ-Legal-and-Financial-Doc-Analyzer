@@ -1,4 +1,6 @@
-# AI-Powered Legal & Financial Document Analyzer (Streamlit App) import streamlit as st import spacy import pandas as pd import re import pdfplumber from sentence_transformers import SentenceTransformer, util import camelot import io # Load spaCy model nlp = spacy.load("en_core_web_sm") # Load se
+# AI-Powered Legal & Financial Document Analyzer (Streamlit App)
+
+This repository contains the code for an AI-powered Streamlit application designed to intelligently analyze legal and financial documents. Leveraging natural language processing, optical character recognition, and data visualization techniques, the tool automates the extraction of key information, identification of potential risks, and assessment of compliance, offering valuable insights for professionals in the legal and finance domains.
 
 # Directory Strucutre
 
