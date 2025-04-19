@@ -1,123 +1,127 @@
-# AI-Powered Legal & Financial Document Analyzer (Streamlit App)
+# VaultIQ: AI-Powered Legal & Financial Document Analyzer
 
-This repository contains the code for an AI-powered Streamlit application designed to intelligently analyze legal and financial documents. Leveraging natural language processing, optical character recognition, and data visualization techniques, the tool automates the extraction of key information, identification of potential risks, and assessment of compliance, offering valuable insights for professionals in the legal and finance domains.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-# Directory Strucutre
+**VaultIQ** is a Streamlit-based AI application that intelligently analyzes legal and financial documents. It utilizes NLP, OCR, and data visualization to automate information extraction, risk detection, compliance checks, and insights generation — making it a powerful tool for legal and financial professionals.
 
-├── .streamlit/
+---
+
+## 🚀 Features
+
+- 📄 **Multi-format Support**: Analyze documents in **PDF**, **TXT**, and **DOCX** formats.
+- 🧠 **OCR Support**: Extract text from scanned documents and images.
+- 💹 **Financial Analysis**:
+  - Extract metrics: *Revenue*, *Net Income*, *Assets*, etc.
+  - Calculate financial ratios and detect trends.
+  - Visualize data with dynamic charts.
+- 📜 **Legal Contract Analysis**:
+  - Identify parties, dates, governing law, and obligations.
+  - Analyze risk clauses: *Indemnification*, *Liability*, *IP*, etc.
+  - Extract contract duration and financial value.
+- ✅ **Automated Compliance Checks**:
+  - Detect missing clauses.
+  - Assess adherence to regulatory frameworks.
+  - Offer suggestions to improve compliance.
+- 📊 **Interactive Visualizations**:
+  - Risk heatmaps, word clouds, entity graphs, and metric charts.
+
+---
+
+## 📁 Directory Structure
+
+```
+VaultIQ/
+├── .streamlit/                  # Streamlit app configuration
 │   └── config.toml
 ├── Analysis/
-│   ├── __pycache__/
-│   ├── compliance_checker.py
-│   ├── financial_analyzer.py
-│   └── legal_analyzer.py
+│   ├── compliance_checker.py    # Compliance logic
+│   ├── financial_analyzer.py    # Financial data analysis
+│   └── legal_analyzer.py        # Contract analysis logic
 ├── data/
-│   └── examples/
-├── env/
-│   ├── etc/
-│   ├── Include/
-│   ├── Lib/
-│   ├── Scripts/
-│   └── share/
+│   └── examples/                # Sample documents
 ├── utils/
-│   ├── __pycache__/
-│   ├── file_processor.py
-│   └── visualization.py
-├── pyvenv.cfg
-├── app.py
-├── law.png
-├── readme.md
-└── requirements.txt
+│   ├── file_processor.py        # File I/O handling
+│   └── visualization.py         # Graphs, charts, and visuals
+├── app.py                       # Main Streamlit app
+├── law.png                      # UI image/logo
+├── requirements.txt             # Python dependencies
+└── README.md                    # Project documentation
+```
 
-# AI-Powered Legal & Financial Document Analyzer
+---
 
-An advanced document analysis tool that uses artificial intelligence to extract key information, identify risks, and assess compliance in legal contracts and financial reports.
+## ⚙️ Installation
 
-## Features
+### 1. Clone the Repository
+```bash
+git clone https://github.com/yourusername/document-analyzer.git
+cd document-analyzer
+```
 
-- **Multi-format Document Processing**: Analyze PDF, TXT, and DOCX files
-- **Optical Character Recognition (OCR)**: Extract text from scanned documents
-- **Financial Analysis**:
-  - Extract key financial metrics (Revenue, Net Income, Assets, etc.)
-  - Calculate financial ratios automatically
-  - Identify financial trends across reporting periods
-  - Visualize financial data for easier interpretation
-- **Legal Contract Analysis**:
-  - Identify parties, dates, and governing law
-  - Detect and assess risk in key clauses (Indemnification, Liability, IP, etc.)
-  - Extract obligations for each party
-  - Determine contract duration and value
-- **Compliance Checking**:
-  - Verify compliance with common regulatory frameworks
-  - Check for required clauses and provisions
-  - Provide recommendations for improving compliance
-- **Visual Insights**:
-  - Interactive charts and graphs of key metrics
-  - Risk assessment heatmaps
-  - Entity relationship visualization
-  - Word clouds for document term frequency analysis
+### 2. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
 
-## Installation
+### 3. Download NLP Model
+```bash
+python -m spacy download en_core_web_sm
+```
 
-1. Clone this repository:
-   ```
-   git clone https://github.com/yourusername/document-analyzer.git
-   cd document-analyzer
-   ```
+### 4. Run the App
+```bash
+streamlit run app.py
+```
 
-2. Install dependencies:
-   ```
-   pip install -r requirements.txt
-   ```
+---
 
-3. Download the required spaCy model:
-   ```
-   python -m spacy download en_core_web_sm
-   ```
+## 💡 Usage Guide
 
-4. Run the application:
-   ```
+1. **Launch the app**:
+   ```bash
    streamlit run app.py
    ```
+2. **Upload your document** (PDF, TXT, or DOCX).
+3. **Navigate tabs** to explore analysis:
+   - **Document Overview**
+   - **Financial Analysis**
+   - **Legal Analysis**
+   - **Compliance Check**
+   - **Visualizations**
+4. **Adjust settings** from the sidebar:
+   - Choose analysis type: *Comprehensive*, *Financial*, *Legal*, or *Compliance*
+   - Set confidence threshold
+   - Toggle OCR on/off
 
-## Usage
+---
 
-1. Launch the application by running `streamlit run app.py`
-2. Upload a legal contract or financial report using the file uploader
-3. The application will automatically process the document and display results in different tabs:
-   - Document Overview: View extracted text and tables
-   - Financial Analysis: See metrics, ratios, and trends
-   - Legal Analysis: Review contract information and risk assessment
-   - Compliance Check: Verify regulatory compliance
-   - Visualizations: Explore interactive visualizations of document insights
+## 🛠 Technologies Used
 
-## Configuration Options
+- **Streamlit** – UI framework
+- **spaCy** – NLP engine for entity recognition
+- **SentenceTransformers** – Semantic similarity & embeddings
+- **pdfplumber** / **camelot** – PDF parsing
+- **pytesseract** – OCR from images
+- **Plotly**, **Matplotlib** – Data visualization
 
-- **Analysis Type**: Select focus area (Comprehensive, Financial, Legal, or Compliance)
-- **Confidence Threshold**: Adjust the minimum confidence level for pattern matching
-- **OCR**: Enable/disable optical character recognition for scanned documents
+---
 
-## Technologies Used
+## ⚠️ Limitations
 
-- **Streamlit**: Web application framework
-- **spaCy**: Natural language processing for named entity recognition
-- **Sentence Transformers**: Semantic text matching
-- **pdfplumber & camelot**: PDF text and table extraction
-- **pytesseract**: Optical character recognition
-- **Plotly & Matplotlib**: Data visualization
+- **OCR Accuracy** depends on image/document quality.
+- **Financial Extraction** best works with structured reports.
+- **Legal Risk Detection** is a preliminary aid — always verify with legal professionals.
+- **Compliance Checks** are general-purpose and may not cover niche standards.
 
-## Limitations
+---
 
-- OCR accuracy depends on document quality and may not be perfect for poorly scanned documents
-- Financial metric extraction works best with standardized reporting formats
-- Legal risk assessment should be reviewed by qualified legal professionals
-- Compliance checking covers common requirements but may not include industry-specific regulations
+## 🤝 Contributing
 
-## Contributing
+We welcome your contributions!  
+Feel free to fork the repo, create a feature branch, and submit a Pull Request.
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+---
 
-## License
+## 📄 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
-Restructuring Code into Modular Application - Claude
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
